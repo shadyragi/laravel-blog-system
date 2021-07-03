@@ -21,7 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['web']], function () {
     //
-    Route::auth();
 
 	Route::get('/home', 'HomeController@index');
     
@@ -46,8 +45,5 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/replies/{reply}/like', 'likesController@store');
 
-    Route::get('/', function () {
-    
-    return view('welcome');
-});
+    Route::get('/', "HomeController@index");
 });

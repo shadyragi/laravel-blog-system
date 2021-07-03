@@ -46,7 +46,7 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-              
+              @if(auth()->check())
                 <ul class="nav navbar-nav">
                     <li> <a href="/threads">Threads</a> </li>
                 </ul>
@@ -68,7 +68,8 @@
                         </div>
                       </li>
                 </ul>
-                @if(auth()->user()->isAdmin())
+                @endif
+                @if( auth()->check() && auth()->user()->isAdmin())
                 <ul class="nav navbar-nav">
                     <li> <a href="/threads/create">New Thread</a> </li>
                 </ul>
@@ -87,7 +88,11 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <form method="POST" action="{{ url('/logout') }}">
+                                    {{csrf_field()}}
+
+                                <li><a href="#"><input type="submit" value="logout" name=""></a><i class="fa fa-btn fa-sign-out"></i></li>
+                                </form>
                             </ul>
                         </li>
                     @endif
