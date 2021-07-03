@@ -4,8 +4,6 @@
 
 ## 2 - import "blog.sql" into database called "blog"
 
-note: "if you have composer version 2.x , plz rename scopes folder located in "app/scopes" to app/Scopes with "S" capital for psr4 autoloading"
-
 ## 3 - navigate to the project folder and run "composer install"
 
 ## 4 - run cp .env.example .env
