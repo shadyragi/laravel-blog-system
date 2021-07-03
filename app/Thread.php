@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Scopes\repliescountScope;
+use App\scopes\repliescountScope;
 
 use Auth;
 
